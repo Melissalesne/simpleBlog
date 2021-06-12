@@ -47,7 +47,7 @@ class AppFixtures extends Fixture
         for ($i = 0; $i < 100; $i++) {
             $article = new Article();
             $article->setTitle($faker->text(50));
-            $article->setContent($faker->text(6000));
+            $article->setContent($faker->text(500));
             $article->setImage($faker->imageUrl());
             $article->setCreatedAt(new \DateTime());
             $article->addCategory($categories[$faker->numberBetween(0, 14)]);
