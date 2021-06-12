@@ -36,7 +36,10 @@ class HomeController extends AbstractController
         // Récupère un seul article
         $article = $repo->find($id);
 
-
+        // si l'article n'est pas trouvé, je redirige l'utilisateur sur la page d'accueil  
+        if (!$article) {
+            return $this->redirectToRoute('home');
+        }
 
         return $this->render("show/index.html.twig", [
             'article' => $article,
