@@ -54,6 +54,7 @@ class User
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="author")
      */
     private $articles;
+    private $passwordConfirm;
 
     public function __construct()
     {
@@ -69,6 +70,18 @@ class User
     public function getUsername(): ?string
     {
         return $this->username;
+    }
+
+    public function getPasswordConfirm(): ?string
+    {
+        return $this->passwordConfirm;
+    }
+
+    public function setPasswordConfirm(string $passwordConfirm): self
+    {
+        $this->passwordConfirm = $passwordConfirm;
+
+        return $this;
     }
     public function __toString()
     {
