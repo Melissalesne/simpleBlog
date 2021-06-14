@@ -22,7 +22,7 @@ class HomeController extends AbstractController
         $this->repoCategory = $repoCategory;
     }
     /**
-     * @Route("/home", name="home")
+     * @Route("/", name="home")
      */
     public function index(): Response
     {
